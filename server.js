@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000; // You can change this to any available port
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -23,6 +23,8 @@ app.get('/roll', (req, res) => {
     res.json(getRandomNumber());
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = { app, server };
