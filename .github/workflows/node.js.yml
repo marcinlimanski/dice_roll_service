@@ -42,5 +42,5 @@ jobs:
     - name: Build and Push Docker image
       run: |
         docker build -t dice_backend .
-        docker tag dice_backend:latest dice_backend:latest
-        docker push dice_backend:latest
+        docker tag dice_backend:latest marcinlimanski/dice_backend:latest
+        docker push marcinlimanski/dice_backend:latest
