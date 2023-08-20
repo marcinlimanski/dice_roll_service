@@ -18,8 +18,8 @@ function getRandomNumber() {
     // Use Math.floor to truncate the decimal part and get an integer within the range
     return Math.floor(randomNumber);
 }
-// GET all items
--app.get('/roll', (req, res) => {
+// GET roll
+app.get('/roll', (req, res) => {
     console.log(req.ip)
     res.json(getRandomNumber());
 });
