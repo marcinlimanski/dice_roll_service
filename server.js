@@ -1,8 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-app.use(express.json());
+app.use(express.json(), cors());
 
 function getRandomNumber() {
     min = 1
@@ -17,9 +18,9 @@ function getRandomNumber() {
     // Use Math.floor to truncate the decimal part and get an integer within the range
     return Math.floor(randomNumber);
 }
-
 // GET all items
-app.get('/roll', (req, res) => {
+-app.get('/roll', (req, res) => {
+    console.log(req.ip)
     res.json(getRandomNumber());
 });
 
