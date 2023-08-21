@@ -31,7 +31,7 @@ jobs:
     - name: Runnig install
       run: npm install
     - name: Running Tests
-      run: npx mocha
+      run: npx mocha tests
 
     - name: Login to Docker Hub
       uses: docker/login-action@v1
